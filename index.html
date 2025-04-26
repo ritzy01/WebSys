@@ -1,39 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--<font></font>-->
-	<link rel="stylesheet" href="style.css">
-	<title>DanWebsite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  div.logo {
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+  <title>Nads</title>
 </head>
 <body>
-	<header>
-	<a href="#" class="logo"> Daniel</a>
-	<nav>
-		<a href="#" class ="active"> Home</a>
-		<a href="#" class ="active"> Services</a>
-		<a href="#" class = "active"> Skills</a>
-		<a href="#" class = "active"> Education</a>
-		<a href="#" class = "active"> Experience</a>
-		<a href="#" class = "active"> Contact</a>
-	</nav>
-</header>
-	<section class="home">
-		<div class="home-img">
-			<img src="https://thumbs.dreamstime.com/b/sun-set-pet-my-named-ram-was-random-pic-our-routine-walks-sunset-time-179708846.jpg" alt="">
-		</div>
-		<div class="home-content">
-			<h1> Hi, it's <span> Daniel</span> </h1>
-			<h3 class="typing=-text"> I'm a <span></span></h3>
-			<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo quas illum dolor quisquam at, odio quam similique beatae, accusantium quos nemo laboriosam est totam, atque aut blanditiis adipisci ex?</p>
-			<div class="social-icons">
-				<a href =""> <i class="fa-brands fa-linkedin"></i> </a>
-				<a href =""> <i class="fa-brands fa-github"></i> </a>
-			</div>
-			<a href ="#" class="btn"> Hire Me!</a>
-		</div>
-	</div>
-	</section>
+  
+  <div class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        D. Angelo
+      </div>
+  
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="slider">
+    <div class="item">
+      <h1>Space Fact 1</h1>
+      Jupiter protects Earth - its gravity acts like a cosmic shield, deflecting comets and asteroids.🌠
+    </div>
+    <div class="item">
+      <h1>Space Fact 2</h1>
+      Stars "beat" like hearts - they pulsate, expanding and contracting as they burn fuel.⭐
+    </div>
+    <div class="item">
+      <h1>Space Fact 3</h1>
+      Galaxies can "eat" each other - the Milky Way is currently consuming the Sagittarius Dwarf Galaxy.🌌
+    </div>
+    <div class="item ">
+      <h1>Space Fact 4</h1>
+      Space smells like seared steak - astronauts describe a metallic/grilled odor after spacewalks.👩‍🚀
+    </div>
+    <div class="item ">
+      <h1>Space Fact 5</h1>
+      Astronauts grow taller in space - spines stretch up to 2 inches without gravity's compression.🚀
+    </div>
+    <div class="item ">
+      <h1>Space Fact 6</h1>
+      Space has its own "internet" - neutron stars beam signals like cosmic radio towers.🪐
+    </div>
+    <div class="item ">
+      <h1>Space Fact 7</h1>
+      There's an alcohol cloud in space - in Aquila, containing enough ethanol for 400 septillion drinks.🍷
+    </div>
+    <div class="item ">
+      <h1>Space Fact 8</h1>
+      Your body contains stardust - atoms of heavy elements like calcium were forged in supernovae.✨
+    </div>
+    <div class="item ">
+      <h1>Space Fact 9</h1>
+      Black holes can "sing" - they create sound waves when consuming matter, but humans can't hear them.🎤
+    </div>
+    <button id="next">&gt;</button>
+    <button id="prev">&lt;</button>
+  </div>
+  
 </body>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.querySelector('.nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  let items = document.querySelectorAll(".slider .item");
+let active = 3;
+function loadShow() {
+	items[active].style.transform = `none`;
+	items[active].style.zIndex = 1;
+	items[active].style.filter = "none";
+	items[active].style.opacity = 1;
+	// show after
+	let stt = 0;
+	for (var i = active + 1; i < items.length; i++) {
+		stt++;
+		items[i].style.transform = `translateX(${120 * stt}px) scale(${
+			1 - 0.2 * stt
+		}) perspective(16px) rotateY(-1deg)`;
+		items[i].style.zIndex = -stt;
+		items[i].style.filter = "blur(5px)";
+		items[i].style.opacity = stt > 2 ? 0 : 0.6;
+	}
+	stt = 0;
+	for (var i = active - 1; i >= 0; i--) {
+		stt++;
+		items[i].style.transform = `translateX(${-120 * stt}px) scale(${
+			1 - 0.2 * stt
+		}) perspective(16px) rotateY(1deg)`;
+		items[i].style.zIndex = -stt;
+		items[i].style.filter = "blur(5px)";
+		items[i].style.opacity = stt > 2 ? 0 : 0.6;
+	}
+}
+loadShow();
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+next.onclick = function () {
+	active = active + 1 < items.length ? active + 1 : active;
+	loadShow();
+};
+prev.onclick = function () {
+	active = active - 1 >= 0 ? active - 1 : active;
+	loadShow();
+};
+
+
+</script>
+
+
+
 </html>
