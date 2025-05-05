@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      div.logo {
+        font-family: "Finger Paint", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+</style>
+<title>Nads</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="script.js"></script>
+<div class="navbar">
+  <div class="navbar-container">
+    <div class="logo">D. Angelo</div>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="techstack.html">Tech Stack</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+    const burger = document.getElementById("burger");
+    const navLinks = document.querySelector(".nav-links");
+
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</html>

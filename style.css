@@ -82,7 +82,7 @@ body {
     gap: 1.5rem;
     padding: 1rem 0;
     display: none;
-    z-index: 999; /* Make sure it's above other content */
+    z-index: 999;
   }
 
   .nav-links.active {
@@ -126,6 +126,17 @@ canvas {
   display: block;
   width: 100vw;
   height: 100vh;
+  position: fixed; /* Add this */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  padding: 20px;
 }
 
 @media (max-width: 768px) {

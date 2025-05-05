@@ -16,6 +16,60 @@
         font-weight: 400;
         font-style: normal;
       }
+      .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 40px 20px;
+        position: relative;
+      }
+      
+      .card-content {
+      flex: 1; /* Takes remaining space */
+    }
+
+      .card {
+        width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        margin-top: 100px;
+        padding: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex; /* Add flexbox */
+        gap: 15px; /* Space between image and text */
+        align-items: center; /* Vertically center content */
+      }
+
+      .text {
+        flex-direction: column;
+      }
+
+      .card-img {
+        width: 300px; /* Adjust as needed */
+        height: 300px; /* Adjust as needed */
+        border-radius: 10px;
+        object-fit: fill; /* Ensures image fills space without distortion */
+        flex-shrink: 0; /* Prevents image from shrinking */
+      }
+      
+      .card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .card h1 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 8px; /* Add some space below title */
+      }
+      
+      .card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem; /* Slightly smaller text */
+      margin: 0; /* Remove default margins */
+}
     </style>
     <title>Nads</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -26,7 +80,6 @@
     <div class="navbar">
       <div class="navbar-container">
         <div class="logo">D. Angelo</div>
-
         <div class="burger" id="burger">
           <span></span>
           <span></span>
@@ -34,14 +87,24 @@
         </div>
 
         <ul class="nav-links">
-          <li><a href="home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
           <li><a href="#tech_Stack">Tech Stack</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
-
+    <div class="content">
+      <div class="card-container">
+        <div class="card">
+          <div>
+          <img src ="formal.jpg" alt ="face" class="card-img">
+        </div>
+        <div class ="Intro text">
+          <h1> Daniel Angelo Nadal</h1>
+          <p> Outside of the academic ground, my daily routine consists of maintaining an active lifestyle with intellectual engagement of reading graphic novels. The human mind and psyche really fascinate me and I’d like to expand my knowledge in this topic in the future. I’d also like to have a business in the future in sales of computer hardwares and peripherals.
+          </p>
+        </div>
   <script>
     const burger = document.getElementById("burger");
     const navLinks = document.querySelector(".nav-links");
