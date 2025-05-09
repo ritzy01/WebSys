@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +19,7 @@
         font-weight: 400;
         font-style: normal;
       }
-      
+
       .card-container {
         display: flex;
         justify-content: center;
@@ -25,7 +28,7 @@
         padding: 20px;
         position: relative;
       }
-      
+
       .card {
         width: 100%;
         max-width: 1000px;
@@ -50,9 +53,9 @@
       }
 
       .card-content {
-      flex: 1;
-      text-align: center; /* Center-aligns all text inside .card-content */
-}
+        flex: 1;
+        text-align: center; /* Center-aligns all text inside .card-content */
+      }
 
       .text {
         flex-direction: column;
@@ -67,18 +70,18 @@
         object-fit: cover;
         align-self: center;
       }
-      
+
       @media (min-width: 768px) {
         .card-img {
           width: 300px;
           height: 300px;
         }
       }
-      
+
       .card:hover {
         transform: translateY(-10px);
       }
-      
+
       .card h1 {
         color: white;
         margin-top: 50px;
@@ -86,17 +89,17 @@
         font-size: 1.5rem;
         font-family: "Finger Paint", sans-serif;
         text-align: center; /* Ensures the heading is centered */
-}
-      
-        .card p {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 0.9rem;
-          margin: 0;
-          text-align: center; /* Centers the paragraph text */
-          max-width: 600px; /* Optional: Limits width for better readability */
-          margin-left: auto; /* Works with margin-right to center block */
-          margin-right: auto;
-        }
+      }
+
+      .card p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        margin: 0;
+        text-align: center; /* Centers the paragraph text */
+        max-width: 600px; /* Optional: Limits width for better readability */
+        margin-left: auto; /* Works with margin-right to center block */
+        margin-right: auto;
+      }
 
       /* Improved mobile navbar */
       .navbar {
@@ -135,17 +138,24 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
-          <li><a href="#tech_Stack">Tech Stack</a></li>
+          <li><a href="techstack.html">Tech Stack</a></li>
         </ul>
       </div>
     </div>
     <div class="content">
       <div class="card-container">
         <div class="card">
-          <img src="formal.jpg" alt="face" class="card-img">
+          <img src="formal.jpg" alt="face" class="card-img" />
           <div class="Intro text">
             <h1>Daniel Angelo Nadal</h1>
-            <p>Outside of the academic ground, my daily routine consists of maintaining an active lifestyle with intellectual engagement of reading graphic novels. The human mind and psyche really fascinate me and I'd like to expand my knowledge in this topic in the future. I'd also like to have a business in the future in sales of computer hardwares and peripherals.</p>
+            <p>
+              Outside of the academic ground, my daily routine consists of
+              maintaining an active lifestyle with intellectual engagement of
+              reading graphic novels. The human mind and psyche really fascinate
+              me and I'd like to expand my knowledge in this topic in the
+              future. I'd also like to have a business in the future in sales of
+              computer hardwares and peripherals.
+            </p>
           </div>
         </div>
       </div>
@@ -159,7 +169,7 @@
       });
 
       // Improved touch support for hover effects
-      document.addEventListener('touchstart', function() {}, true);
+      document.addEventListener("touchstart", function () {}, true);
     </script>
   </body>
 </html>
